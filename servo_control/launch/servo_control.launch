@@ -1,0 +1,10 @@
+<launch>
+
+<node name="servo_control_active" pkg="servo_control" type="servo_control_node" output="screen" launch-prefix="xterm -e">
+    <param name="acc_lim_rpm_per_sec" value="500"/>
+    <param name="vel_lim_rpm" value="10"/>
+    <param name="revolutions" value="2"/>
+    
+</node>
+
+</launch>

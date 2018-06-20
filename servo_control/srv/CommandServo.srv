@@ -1,0 +1,4 @@
+char command
+int64 modifier
+---
+int64 response_code
