@@ -4,8 +4,8 @@
 <include file="$(find servo_control)/launch/servo_control.launch" />
 <include file="$(find laser_assembler)/launch/laser_assembler.launch" />
 <include file="$(find urg_node)/launch/urg_lidar.launch" />
-<!-- <include file="$(find lpms_imu)/launch/lpms_imu.launch" /> -->
-<node name="rviz" pkg="rviz" type="rviz"></node>
-<node type="stack_controller_node" pkg="stack_controller" name="core_controller" launch-prefix="xterm -e">
-</node>
+<include file="$(find lpms_imu)/launch/lpms_imu.launch" />
+<node name="rviz" pkg="rviz" type="rviz" />
+<node type="stack_controller_node" pkg="stack_controller" name="core_controller" launch-prefix="xterm -e" />
+<node pkg="rqt_gui" type="rqt_gui" name="rqt_gui" args="--perspective-file $(find stack_controller)/config/custom.perspective" />
 </launch>

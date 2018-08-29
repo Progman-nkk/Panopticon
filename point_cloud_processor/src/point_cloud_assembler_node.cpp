@@ -106,6 +106,7 @@ namespace laser_assembler
 using namespace laser_assembler;
 
 int main(int argc, char **argv){
+    printf("assembler_node\n");
     ros::init(argc, argv, "point_cloud_assembler_node");
     ros:: NodeHandle n;;
     ROS_INFO("Waiting for [build_cloud] to be advertised");

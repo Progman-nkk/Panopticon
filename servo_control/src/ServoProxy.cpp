@@ -26,7 +26,7 @@ ServoProxy::ServoProxy(ros::NodeHandle* _nh, ros::NodeHandle _p_nh):nh(*_nh){
 
 	readyNode();
 }
-bool ServoProxy::readyNode(){
+base_linkbool ServoProxy::readyNode(){
 	try
 	{ 
 		SysManager::FindComHubPorts(comHubPorts);
@@ -124,6 +124,7 @@ void ServoProxy::update(double rotationAroundZ, ros::Time rotationTimeStamp){
     q.setRPY(0.0, (-90*PI/180), (rotationAroundZ*PI/180));
     transform.setRotation(q);
     br.sendTransform(tf::StampedTransform(transform, rotationTimeStamp, "base_link", "base_laser"));
+
 }
 bool ServoProxy::closeNode(){
 	INode &theNode = myMgr.Ports(0).Nodes(0);
